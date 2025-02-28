@@ -49,7 +49,7 @@ namespace Practice_9_SeaFight
                         Console.Write(i + 1 + " ");
                         for (int j = 0; j < map.GetLength(1); j++)
                         {
-                            if (map[i, j] == coords[j]) Console.WriteLine(coords[j]);
+                            //if (map[i, j] == coords[j]) Console.WriteLine(coords[j]);
                             Console.Write("+ ");
                         }
                         Console.WriteLine();

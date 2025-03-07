@@ -19,43 +19,73 @@ namespace Practice_9_SeaFight
             //    { "Три", coorDs },
             //    { "Четыре", coorDs }
             //};
-            int[,] map = new int[10, 10];
+            int coord1_1;
+            int coord1_2;
+            string[,] map = { { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." }, { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." } };
             Console.WriteLine("  а б в г д е ж з к и");
             for (int i = 0; i < map.GetLength(0); i++)
             {
-                Console.Write(i+1 + " ");
+                Console.Write(i + 1 + " ");
                 for (int j = 0; j < map.GetLength(1); j++)
                 {
-                    Console.Write("+ ");
+                    Console.Write(". ");
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("\n-- Размещение кораблей --");
-            Console.Write("Выберите корабль (Один/Два/Три/Четыре): ");
+            Console.Write("Выберите корабль (Один | Два | Три | Четыре): ");
             string sheep = Console.ReadLine();
             switch (sheep)
             {
                 
                 case "Один":
-                    int[] coords = new int[2];
                     Console.WriteLine("Введите координаты: ");
-                    for (int i = 0; i < coords.GetLength(0); i++)
-                    {
-                        coords[i] = Convert.ToInt32(Console.ReadLine());
-                    }
-
+                    coord1_1 = Convert.ToInt32(Console.ReadLine());
+                    coord1_2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("  а б в г д е ж з к и");
                     for (int i = 0; i < map.GetLength(0); i++)
                     {
                         Console.Write(i + 1 + " ");
                         for (int j = 0; j < map.GetLength(1); j++)
                         {
-                            //if (map[i, j] == coords[j]) Console.WriteLine(coords[j]);
-                            Console.Write("+ ");
+                            if (i == coord1_1 && j == coord1_2)
+                            {
+                                Console.Write("+ ");
+                                continue;
+                            }
+                            Console.Write(". ");
                         }
                         Console.WriteLine();
                     }
                     break;
                 case "Два":
+                    Console.WriteLine("Введите координаты: ");
+                    coord1_1 = Convert.ToInt32(Console.ReadLine());
+                    coord1_2 = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Выберите направление корабля: ");
+                    string direction = Console.ReadLine();
+
+                    Console.WriteLine("  а б в г д е ж з к и");
+                    for (int i = 0; i < map.GetLength(0); i++)
+                    {
+                        Console.Write(i + 1 + " ");
+                        for (int j = 0; j < map.GetLength(1); j++)
+                        {
+                            switch (direction)
+                            {
+                                case "влево":
+                                    if (i == coord1_1 && j == coord1_2)
+                                    {
+                                        Console.Write("+ ");
+
+                                        continue;
+                                    }
+                                    break;
+                            }
+                            Console.Write(". ");
+                        }
+                        Console.WriteLine();
+                    }
                     break;
                 case "Три":
                     break;

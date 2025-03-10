@@ -17,8 +17,8 @@ namespace Practice_9_SeaFight
         static int coord4;
         static void Main(string[] args)
         {
+            Console.WriteLine("Press Enter");
             EnemySheep();
-            FightProcess();
             string direction;
             int single_deck = 0;
             int double_deck = 0;
@@ -35,7 +35,6 @@ namespace Practice_9_SeaFight
             Console.WriteLine("\n-- Размещение кораблей --");
             for (int i = 1; i <= 10; i++)
             {
-                Console.WriteLine(i);
                 Console.Write("Выберите корабль (Один | Два | Три | Четыре): ");
                 string sheep = Console.ReadLine();
                 Console.WriteLine("Введите координаты: ");
@@ -395,9 +394,18 @@ namespace Practice_9_SeaFight
                         }
                     }
                 }
+                else if (sheep == "проверка")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Такого карабля нету!");
+                    i--;
+                }
                 DrawMap();
             }
-            
+            FightProcess();
             Console.ReadKey();
         }
         public static void DrawMap()
@@ -506,7 +514,6 @@ namespace Practice_9_SeaFight
             enemyMap[coord3, coord4 + 1] = "O";
             enemyMap[coord3, coord4 + 2] = "O";
             enemyMap[coord3, coord4 + 3] = "O";
-            DrawEnemyMap();
             //// Однопалубный
             //for (int i = 1; i <= 4; i++)
             //{
@@ -690,7 +697,50 @@ namespace Practice_9_SeaFight
                     Console.WriteLine("Попал!");
                 }
                 else Console.WriteLine("Мимо!");
-                DrawEnemyMap();
+
+                count = 0;
+                for (int i = 0; i < map.GetLength(0); i++)
+                {
+                    for (int j = 0; j < map.GetLength(1); j++)
+                    {
+                        if (map[i, j] == "O") count++;
+                    }
+                }
+                if (count == 0)
+                {
+                    Console.WriteLine("Вы проиграли!");
+                    break;
+                }
+                coord3 = rnd.Next(0, 10);
+                coord4 = rnd.Next(0, 10);
+                int enemyCoord = 0;
+                if (coord3 == 0) enemyCoord = 1;
+                if (coord3 == 1) enemyCoord = 2;
+                if (coord3 == 2) enemyCoord = 3;
+                if (coord3 == 3) enemyCoord = 4;
+                if (coord3 == 4) enemyCoord = 5;
+                if (coord3 == 5) enemyCoord = 6;
+                if (coord3 == 6) enemyCoord = 7;
+                if (coord3 == 7) enemyCoord = 8;
+                if (coord3 == 8) enemyCoord = 9;
+                if (coord3 == 9) enemyCoord = 10;
+                char letter = 'a';
+                if (coord4 == 0) letter = 'а';
+                if (coord4 == 1) letter = 'б';
+                if (coord4 == 2) letter = 'в';
+                if (coord4 == 3) letter = 'г';
+                if (coord4 == 4) letter = 'д';
+                if (coord4 == 5) letter = 'е';
+                if (coord4 == 6) letter = 'ж';
+                if (coord4 == 7) letter = 'з';
+                if (coord4 == 8) letter = 'и';
+                if (coord4 == 9) letter = 'к';
+                Console.WriteLine($"Противник вводит координаты: {enemyCoord} {letter}");
+                if (map[coord3, coord4] == "O")
+                {
+                    map[coord3, coord4] = "X";
+                }
+                DrawMap();
             }
         }
     }

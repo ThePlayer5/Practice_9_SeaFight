@@ -19,6 +19,7 @@ namespace Practice_9_SeaFight
         {
             Console.WriteLine("Press Enter");
             EnemySheep();
+            DrawEnemyMap();
             string direction;
             int single_deck = 0;
             int double_deck = 0;
@@ -71,6 +72,7 @@ namespace Practice_9_SeaFight
                 }
                 else if (sheep == "Два")
                 {
+                    bool condition = map[coord1, coord2] == "O" && map[coord1, coord2 - 1] == "O" && map[coord1, coord2 + 1] == "O" && map[coord1 - 1, coord2] == "O" && map[coord1 + 1, coord2] == "O";
                     if (double_deck == 3)
                     {
                         Console.WriteLine("Вы уже разместили все двухпалубные карабли!");
@@ -90,7 +92,8 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1, coord2 - 1] == "O")
+                                    if (condition)
+                                    // Сделай так же с другими караблями и караблями противника
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -111,7 +114,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1, coord2 + 1] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -132,7 +135,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1 - 1, coord2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -153,7 +156,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1 + 1, coord2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -175,6 +178,7 @@ namespace Practice_9_SeaFight
                 }
                 else if (sheep == "Три")
                 {
+                    bool condition = map[coord1, coord2] == "O" && map[coord1, coord2 - 2] == "O" && map[coord1, coord2 + 2] == "O" && map[coord1 - 2, coord2] == "O" && map[coord1 + 2, coord2] == "O";
                     if (triple_deck == 2)
                     {
                         Console.WriteLine("Вы уже разместили все трёхпалубные карабли!");
@@ -194,7 +198,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1, coord2 - 1] == "O" || map[coord1, coord2 - 2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -216,7 +220,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1, coord2 + 1] == "O" || map[coord1, coord2 + 2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -238,7 +242,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1 - 1, coord2] == "O" || map[coord1 - 2, coord2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -260,7 +264,7 @@ namespace Practice_9_SeaFight
                                 }
                                 else
                                 {
-                                    if (map[coord1, coord2] == "O" || map[coord1 + 1, coord2] == "O" || map[coord1 + 2, coord2] == "O")
+                                    if (condition)
                                     {
                                         Console.WriteLine("Эта ячейка уже занята");
                                         i--;
@@ -474,202 +478,185 @@ namespace Practice_9_SeaFight
                     enemyMap[i, j] = ".";
                 }
             }
-            coord3 = 3;
-            coord4 = 2;
-            enemyMap[coord3, coord4] = "O";
-            coord3 = 7;
-            coord4 = 6;
-            enemyMap[coord3, coord4] = "O";
-            coord3 = 0;
-            coord4 = 2;
-            enemyMap[coord3, coord4] = "O";
-            coord3 = 5;
-            coord4 = 1;
-            enemyMap[coord3, coord4] = "O";
-            coord3 = 9;
-            coord4 = 2;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3, coord4 - 1] = "O";
-            coord3 = 4;
-            coord4 = 4;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3 + 1, coord4] = "O";
-            coord3 = 2;
-            coord4 = 7;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3, coord4 + 1] = "O";
-            coord3 = 9;
-            coord4 = 5;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3, coord4 + 1] = "O";
-            enemyMap[coord3, coord4 + 2] = "O";
-            coord3 = 0;
-            coord4 = 5;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3 + 1, coord4] = "O";
-            enemyMap[coord3 + 2, coord4] = "O";
-            coord3 = 7;
-            coord4 = 0;
-            enemyMap[coord3, coord4] = "O";
-            enemyMap[coord3, coord4 + 1] = "O";
-            enemyMap[coord3, coord4 + 2] = "O";
-            enemyMap[coord3, coord4 + 3] = "O";
-            //// Однопалубный
-            //for (int i = 1; i <= 4; i++)
-            //{
-            //    coord3 = rnd.Next(0, 10);
-            //    coord4 = rnd.Next(0, 10);
-            //    if (enemyMap[coord3, coord4] == "O")
-            //    {
-            //        i--;
-            //    }
-            //    else enemyMap[coord3, coord4] = "O";
-            //}
-            //// Двухпалубный
-            //for (int i = 1; i <= 3; i++)
-            //{
-            //    coord3 = rnd.Next(0, 10);
-            //    coord4 = rnd.Next(0, 10);
-            //    if (coord4 - 1 <= 0 || coord4 + 1 > 8 || coord3 - 1 <= 0 || coord3 + 1 > 8)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O"
-            //            || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O")
-            //        {
-            //            i--;
-            //        }
-            //        else
-            //        {
-            //            int directChance = rnd.Next(0, 4);
-            //            if (directChance == 0)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //            }
-            //            if (directChance == 1)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //            }
-            //            if (directChance == 2)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //            }
-            //            if (directChance == 3)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //            }
-            //        }
-            //    }
-            //}
-            //// Трёхпалубный
-            //for (int i = 1; i <= 2; i++)
-            //{
-            //    coord3 = rnd.Next(0, 10);
-            //    coord4 = rnd.Next(0, 10);
-            //    if (coord4 - 1 <= 0 || coord4 + 1 > 8 || coord3 - 1 <= 0 || coord3 + 1 > 8 || coord4 - 2 <= 0 || coord4 + 2 > 8 || coord3 - 2 <= 0 || coord3 + 2 > 8)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        if (enemyMap[coord3, coord4] == "O"
-            //            || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O"
-            //            || enemyMap[coord3, coord4 - 2] == "O" || enemyMap[coord3, coord4 + 2] == "O" || enemyMap[coord3 - 2, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O")
-            //        {
-            //            i--;
-            //        }
-            //        else
-            //        {
-            //            int directChance = rnd.Next(0, 4);
-            //            if (directChance == 0)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //                enemyMap[coord3, coord4 - 2] = "O";
-            //            }
-            //            if (directChance == 1)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //                enemyMap[coord3, coord4 + 2] = "O";
-            //            }
-            //            if (directChance == 2)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //                enemyMap[coord3 - 2, coord4] = "O";
-            //            }
-            //            if (directChance == 3)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //                enemyMap[coord3 + 2, coord4] = "O";
-            //            }
-            //        }
-            //    }
-            //}
-            //// Четырёхпалубный
-            //for (int i = 1; i <= 1; i++)
-            //{
-            //    coord3 = rnd.Next(0, 10);
-            //    coord4 = rnd.Next(0, 10);
-            //    if (coord4 - 1 <= 0 || coord4 + 1 > 8 || coord3 - 1 <= 0 || coord3 + 1 > 8
-            //        || coord4 - 2 <= 0 || coord4 + 2 > 8 || coord3 - 2 <= 0 || coord3 + 2 > 8
-            //        || coord4 - 3 <= 0 || coord4 + 3 > 8 || coord3 - 3 <= 0 || coord3 + 3 > 8)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        if (enemyMap[coord3, coord4] == "O"
-            //            || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O"
-            //            || enemyMap[coord3, coord4 - 2] == "O" || enemyMap[coord3, coord4 + 2] == "O" || enemyMap[coord3 - 2, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O"
-            //            || enemyMap[coord3, coord4 - 3] == "O" || enemyMap[coord3, coord4 + 3] == "O" || enemyMap[coord3 - 3, coord4] == "O" || enemyMap[coord3 + 3, coord4] == "O")
-            //        {
-            //            i--;
-            //        }
-            //        else
-            //        {
-            //            int directChance = rnd.Next(0, 4);
-            //            if (directChance == 0)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //                enemyMap[coord3, coord4 - 2] = "O";
-            //                enemyMap[coord3, coord4 - 3] = "O";
-            //            }
-            //            if (directChance == 1)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //                enemyMap[coord3, coord4 + 2] = "O";
-            //                enemyMap[coord3, coord4 + 3] = "O";
-            //            }
-            //            if (directChance == 2)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //                enemyMap[coord3 - 2, coord4] = "O";
-            //                enemyMap[coord3 - 3, coord4] = "O";
-            //            }
-            //            if (directChance == 3)
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //                enemyMap[coord3 + 2, coord4] = "O";
-            //                enemyMap[coord3 + 3, coord4] = "O";
-            //            }
-            //        }
-            //    }
-            //}
 
-            Console.ReadKey();
+            //coord3 = 3;
+            //coord4 = 2;
+            //enemyMap[coord3, coord4] = "O";
+            //coord3 = 7;
+            //coord4 = 6;
+            //enemyMap[coord3, coord4] = "O";
+            //coord3 = 0;
+            //coord4 = 2;
+            //enemyMap[coord3, coord4] = "O";
+            //coord3 = 5;
+            //coord4 = 1;
+            //enemyMap[coord3, coord4] = "O";
+            //coord3 = 9;
+            //coord4 = 2;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3, coord4 - 1] = "O";
+            //coord3 = 4;
+            //coord4 = 4;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3 + 1, coord4] = "O";
+            //coord3 = 2;
+            //coord4 = 7;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3, coord4 + 1] = "O";
+            //coord3 = 9;
+            //coord4 = 5;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3, coord4 + 1] = "O";
+            //enemyMap[coord3, coord4 + 2] = "O";
+            //coord3 = 0;
+            //coord4 = 5;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3 + 1, coord4] = "O";
+            //enemyMap[coord3 + 2, coord4] = "O";
+            //coord3 = 7;
+            //coord4 = 0;
+            //enemyMap[coord3, coord4] = "O";
+            //enemyMap[coord3, coord4 + 1] = "O";
+            //enemyMap[coord3, coord4 + 2] = "O";
+            //enemyMap[coord3, coord4 + 3] = "O";
+
+            // Однопалубный
+            for (int i = 1; i <= 4; i++)
+            {
+                coord3 = rnd.Next(0, 10);
+                coord4 = rnd.Next(0, 10);
+                if (enemyMap[coord3, coord4] != "O")
+                {
+                    enemyMap[coord3, coord4] = "O";
+                }
+                else i--;
+            }
+            // Двухпалубный
+            for (int i = 1; i <= 3; i++)
+            {
+                coord3 = rnd.Next(0, 10);
+                coord4 = rnd.Next(0, 10);
+                if (coord4 - 1 < 0 && coord4 + 1 > 9 && coord3 - 1 < 0 && coord3 + 1 > 9)
+                {
+                    i--;
+                }
+                else
+                {
+                    if (!(coord4 - 1 < 0 && enemyMap[coord3, coord4 - 1] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 - 1] = "O";
+                        continue;
+                    }
+                    else if (!(coord4 + 1 > 9 && enemyMap[coord3, coord4 + 1] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 + 1] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 - 1 < 0 && enemyMap[coord3 - 1, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 - 1, coord4] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 + 1 > 9 && enemyMap[coord3 + 1, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 + 1, coord4] = "O";
+                        continue;
+                    }
+                    else i--;
+                }
+            }
+            // Трёхпалубный
+            for (int i = 1; i <= 2; i++)
+            {
+                coord3 = rnd.Next(0, 10);
+                coord4 = rnd.Next(0, 10);
+                if (coord4 - 2 < 0 && coord4 + 2 > 9 && coord3 - 2 < 0 && coord3 + 2 > 9)
+                {
+                    i--;
+                }
+                else
+                {
+                    if (!(coord4 - 2 < 0 && enemyMap[coord3, coord4 - 1] == "O" && enemyMap[coord3, coord4 - 2] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 - 1] = "O";
+                        enemyMap[coord3, coord4 - 2] = "O";
+                        continue;
+                    }
+                    else if (!(coord4 + 2 > 9 && enemyMap[coord3, coord4 + 1] == "O" && enemyMap[coord3, coord4 + 2] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 + 1] = "O";
+                        enemyMap[coord3, coord4 + 2] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 - 2 < 0 && enemyMap[coord3 - 1, coord4] == "O" && enemyMap[coord3 - 2, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 - 1, coord4] = "O";
+                        enemyMap[coord3 - 2, coord4] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 + 2 > 9 && enemyMap[coord3 + 1, coord4] == "O" && enemyMap[coord3 + 2, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 + 1, coord4] = "O";
+                        enemyMap[coord3 + 2, coord4] = "O";
+                        continue;
+                    }
+                    else i--;
+                }
+            }
+            // Четырёхпалубный
+            for (int i = 1; i <= 1; i++)
+            {
+                coord3 = rnd.Next(0, 10);
+                coord4 = rnd.Next(0, 10);
+                if (coord4 - 3 < 0 && coord4 + 3 > 9 && coord3 - 3 < 0 && coord3 + 3 > 9)
+                {
+                    i--;
+                }
+                else
+                {
+                    if (!(coord4 - 3 < 0 && enemyMap[coord3, coord4 - 1] == "O" && enemyMap[coord3, coord4 - 2] == "O" && enemyMap[coord3, coord4 - 3] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 - 1] = "O";
+                        enemyMap[coord3, coord4 - 2] = "O";
+                        enemyMap[coord3, coord4 - 3] = "O";
+                        continue;
+                    }
+                    else if (!(coord4 + 3 > 9 && enemyMap[coord3, coord4 + 1] == "O" && enemyMap[coord3, coord4 + 2] == "O" && enemyMap[coord3, coord4 + 3] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3, coord4 + 1] = "O";
+                        enemyMap[coord3, coord4 + 2] = "O";
+                        enemyMap[coord3, coord4 + 3] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 - 3 < 0 && enemyMap[coord3 - 1, coord4] == "O" && enemyMap[coord3 - 2, coord4] == "O" && enemyMap[coord3 - 3, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 - 1, coord4] = "O";
+                        enemyMap[coord3 - 2, coord4] = "O";
+                        enemyMap[coord3 - 3, coord4] = "O";
+                        continue;
+                    }
+                    else if (!(coord3 + 3 > 9 && enemyMap[coord3 + 1, coord4] == "O" && enemyMap[coord3 + 2, coord4] == "O" && enemyMap[coord3 + 3, coord4] == "O"))
+                    {
+                        enemyMap[coord3, coord4] = "O";
+                        enemyMap[coord3 + 1, coord4] = "O";
+                        enemyMap[coord3 + 2, coord4] = "O";
+                        enemyMap[coord3 + 3, coord4] = "O";
+                        continue;
+                    }
+                    else i--;
+                }
+            }
         }
         public static void FightProcess()
         {

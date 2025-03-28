@@ -489,254 +489,12 @@ namespace Practice_9_SeaFight
                 }
             }
 
-            //coord3 = 3;
-            //coord4 = 2;
-            //enemyMap[coord3, coord4] = "O";
-            //coord3 = 7;
-            //coord4 = 6;
-            //enemyMap[coord3, coord4] = "O";
-            //coord3 = 0;
-            //coord4 = 2;
-            //enemyMap[coord3, coord4] = "O";
-            //coord3 = 5;
-            //coord4 = 1;
-            //enemyMap[coord3, coord4] = "O";
-            //coord3 = 9;
-            //coord4 = 2;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3, coord4 - 1] = "O";
-            //coord3 = 4;
-            //coord4 = 4;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3 + 1, coord4] = "O";
-            //coord3 = 2;
-            //coord4 = 7;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3, coord4 + 1] = "O";
-            //coord3 = 9;
-            //coord4 = 5;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3, coord4 + 1] = "O";
-            //enemyMap[coord3, coord4 + 2] = "O";
-            //coord3 = 0;
-            //coord4 = 5;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3 + 1, coord4] = "O";
-            //enemyMap[coord3 + 2, coord4] = "O";
-            //coord3 = 7;
-            //coord4 = 0;
-            //enemyMap[coord3, coord4] = "O";
-            //enemyMap[coord3, coord4 + 1] = "O";
-            //enemyMap[coord3, coord4 + 2] = "O";
-            //enemyMap[coord3, coord4 + 3] = "O";
-
             string[] direction = { "влево", "вправо", "вверх", "вниз" };
             string[] rnd_Sheep = { "Один", "Два", "Три", "Четыре" };
             int single_deck = 0;
             int double_deck = 0;
             int triple_deck = 0;
             int four_deck = 0;
-            //// Однопалубный
-            //for (int i = 1; i <= 4; i++)
-            //{
-            //    coord3 = rnd.Next(1, 9);
-            //    coord4 = rnd.Next(1, 9);
-            //    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O"
-            //                    || enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
-            //    {
-            //        i--;
-            //    }
-            //    else enemyMap[coord3, coord4] = "O";
-            //}
-            //// Двухпалубный
-            //for (int i = 1; i <= 3; i++)
-            //{
-            //    coord3 = rnd.Next(1, 9);
-            //    coord4 = rnd.Next(1, 9);
-            //    if (coord4 - 1 < 0 || coord4 + 1 > 9 || coord3 - 1 < 0 || coord3 + 1 > 9)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        int direct_Choice = rnd.Next(0, 4);
-            //        string choosen_Direct = direction[direct_Choice];
-            //        if (choosen_Direct == "влево")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O"
-            //                            || enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вправо")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вверх")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вниз")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //    }
-            //}
-            //// Трёхпалубный
-            //for (int i = 1; i <= 2; i++)
-            //{
-            //    coord3 = rnd.Next(1, 9);
-            //    coord4 = rnd.Next(1, 9);
-            //    if (coord4 - 2 < 0 || coord4 + 2 > 9 || coord3 - 2 < 0 || coord3 + 2 > 9)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        int direct_Choice = rnd.Next(0, 4);
-            //        string choosen_Direct = direction[direct_Choice];
-            //        if (choosen_Direct == "влево")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 - 2] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //                enemyMap[coord3, coord4 - 2] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вправо")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3, coord4 + 2] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //                enemyMap[coord3, coord4 + 2] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вверх")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 - 2, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //                enemyMap[coord3 - 2, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вниз")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //                enemyMap[coord3 + 2, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //    }
-            //}
-            //// Четырёхпалубный
-            //for (int i = 1; i <= 1; i++)
-            //{
-            //    coord3 = rnd.Next(1, 9);
-            //    coord4 = rnd.Next(1, 9);
-            //    if (coord4 - 3 < 0 || coord4 + 3 > 9 || coord3 - 3 < 0 || coord3 + 3 > 9)
-            //    {
-            //        i--;
-            //    }
-            //    else
-            //    {
-            //        int direct_Choice = rnd.Next(0, 4);
-            //        string choosen_Direct = direction[direct_Choice];
-            //        if (choosen_Direct == "влево")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 - 2] == "O" || enemyMap[coord3, coord4 - 3] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 - 1] = "O";
-            //                enemyMap[coord3, coord4 - 2] = "O";
-            //                enemyMap[coord3, coord4 - 3] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вправо")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3, coord4 + 2] == "O" || enemyMap[coord3, coord4 + 3] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3, coord4 + 1] = "O";
-            //                enemyMap[coord3, coord4 + 2] = "O";
-            //                enemyMap[coord3, coord4 + 3] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вверх")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 - 2, coord4] == "O" || enemyMap[coord3 - 3, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 - 1, coord4] = "O";
-            //                enemyMap[coord3 - 2, coord4] = "O";
-            //                enemyMap[coord3 - 3, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //        else if (choosen_Direct == "вниз")
-            //        {
-            //            if (!(enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O" || enemyMap[coord3 + 3, coord4] == "O" ||
-            //                            enemyMap[coord3 - 1, coord4 - 1] == "O" && enemyMap[coord3 + 1, coord4 - 1] == "O" && enemyMap[coord3 - 1, coord4 + 1] == "O" && enemyMap[coord3 + 1, coord4 + 1] == "O"))
-            //            {
-            //                enemyMap[coord3, coord4] = "O";
-            //                enemyMap[coord3 + 1, coord4] = "O";
-            //                enemyMap[coord3 + 2, coord4] = "O";
-            //                enemyMap[coord3 + 3, coord4] = "O";
-            //                continue;
-            //            }
-            //            else i--;
-            //        }
-            //    }
-            //}
             for (int i = 1; i <= 10; i++)
             {
                 coord3 = rnd.Next(1, 9);
@@ -755,18 +513,18 @@ namespace Practice_9_SeaFight
                         {
                             i--;
                         }
+                        else if (PositionCheck(coord3, coord4, enemyMap))
+                        {
+                            i--;
+                        }
+                        else if (enemyMap[coord3, coord4] == "O")
+                        {
+                            i--;
+                        }
                         else
                         {
-                            if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O"
-                                || enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
-                            {
-                                i--;
-                            }
-                            else
-                            {
-                                enemyMap[coord3, coord4] = "O";
-                                single_deck++;
-                            }
+                            enemyMap[coord3, coord4] = "O";
+                            single_deck++;
                         }
                     }
                 }
@@ -780,89 +538,98 @@ namespace Practice_9_SeaFight
                     {
                         int direct_Choice = rnd.Next(0, 4);
                         string choosen_Direct = direction[direct_Choice];
+                        bool canPlace = true;
                         switch (choosen_Direct)
                         {
                             case "влево":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 - 1 <= 0)
+                                if (coord4 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k >= coord4 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O"
-                                        || enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 - 1] = "O";
-                                        double_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вправо":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 + 1 > 8)
+                                if (coord4 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k <= coord4 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 + 1] = "O";
-                                        double_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вверх":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 - 1 <= 0)
+                                if (coord3 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 - 1, coord4] = "O";
-                                        double_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вниз":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 + 1 > 8)
+                                if (coord3 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 + 1, coord4] = "O";
-                                        double_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
+                            default:
+                                Console.WriteLine("Такого направления нет");
+                                i--;
+                                break;
                         }
+                        if (canPlace)
+                        {
+                            switch (choosen_Direct)
+                            {
+                                case "влево":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 - 1] = "O";
+                                    break;
+                                case "вправо":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 + 1] = "O";
+                                    break;
+                                case "вверх":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 - 1, coord4] = "O";
+                                    break;
+                                case "вниз":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 + 1, coord4] = "O";
+                                    break;
+                            }
+                            double_deck++;
+                        }
+                        else i--;
                     }
                 }
                 else if (sheep == "Три")
@@ -875,93 +642,102 @@ namespace Practice_9_SeaFight
                     {
                         int direct_Choice = rnd.Next(0, 4);
                         string choosen_Direct = direction[direct_Choice];
+                        bool canPlace = true;
                         switch (choosen_Direct)
                         {
                             case "влево":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 - 1 < 0 || coord4 - 2 < 0)
+                                if (coord4 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k >= coord4 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 - 2] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 - 1] = "O";
-                                        enemyMap[coord3, coord4 - 2] = "O";
-                                        triple_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вправо":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 + 1 > 8 || coord4 + 2 > 8)
+                                if (coord4 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k <= coord4 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3, coord4 + 2] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 + 1] = "O";
-                                        enemyMap[coord3, coord4 + 2] = "O";
-                                        triple_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вверх":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 - 1 < 0 || coord3 - 2 < 0)
+                                if (coord3 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 - 2, coord4] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 - 1, coord4] = "O";
-                                        enemyMap[coord3 - 2, coord4] = "O";
-                                        triple_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вниз":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 + 1 > 8 || coord3 + 2 > 8)
+                                if (coord3 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 + 1, coord4] = "O";
-                                        enemyMap[coord3 + 2, coord4] = "O";
-                                        triple_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
+                            default:
+                                Console.WriteLine("Такого направления нет");
+                                i--;
+                                break;
                         }
+                        if (canPlace)
+                        {
+                            switch (choosen_Direct)
+                            {
+                                case "влево":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 - 1] = "O";
+                                    enemyMap[coord3, coord4 - 2] = "O";
+                                    break;
+                                case "вправо":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 + 1] = "O";
+                                    enemyMap[coord3, coord4 + 2] = "O";
+                                    break;
+                                case "вверх":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 - 1, coord4] = "O";
+                                    enemyMap[coord3 - 2, coord4] = "O";
+                                    break;
+                                case "вниз":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 + 1, coord4] = "O";
+                                    enemyMap[coord3 + 2, coord4] = "O";
+                                    break;
+                            }
+                            triple_deck++;
+                        }
+                        else i--;
                     }
                 }
                 else if (sheep == "Четыре")
@@ -974,101 +750,127 @@ namespace Practice_9_SeaFight
                     {
                         int direct_Choice = rnd.Next(0, 4);
                         string choosen_Direct = direction[direct_Choice];
+                        bool canPlace = true;
                         switch (choosen_Direct)
                         {
                             case "влево":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 - 1 < 0 || coord4 - 2 < 0 || coord4 - 3 < 0)
+                                if (coord4 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k >= coord4 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 - 1] == "O" || enemyMap[coord3, coord4 - 2] == "O" || enemyMap[coord3, coord4 - 3] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
+                                        canPlace = false;
+                                        break;
                                     }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 - 1] = "O";
-                                        enemyMap[coord3, coord4 - 2] = "O";
-                                        enemyMap[coord3, coord4 - 3] = "O";
-                                        four_deck++;
-                                    }
-
                                 }
                                 break;
                             case "вправо":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord4 + 1 > 8 || coord4 + 2 > 8 || coord4 + 3 > 8)
+                                if (coord4 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord4; k <= coord4 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3, coord4 + 1] == "O" || enemyMap[coord3, coord4 + 2] == "O" || enemyMap[coord3, coord4 + 3] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(coord3, k, enemyMap) || enemyMap[coord3, k] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3, coord4 + 1] = "O";
-                                        enemyMap[coord3, coord4 + 2] = "O";
-                                        enemyMap[coord3, coord4 + 3] = "O";
-                                        four_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вверх":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 - 1 < 0 || coord3 - 2 < 0 || coord3 - 3 < 0)
+                                if (coord3 - 1 < 0)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 - 1; k--)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 - 1, coord4] == "O" || enemyMap[coord3 - 2, coord4] == "O" || enemyMap[coord3 - 3, coord4] == "O" ||
-                                        enemyMap[coord3 - 1, coord4 - 1] == "O" || enemyMap[coord3 + 1, coord4 - 1] == "O" || enemyMap[coord3 - 1, coord4 + 1] == "O" || enemyMap[coord3 + 1, coord4 + 1] == "O")
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 - 1, coord4] = "O";
-                                        enemyMap[coord3 - 2, coord4] = "O";
-                                        enemyMap[coord3 - 3, coord4] = "O";
-                                        four_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
                             case "вниз":
-                                if (coord3 < 0 || coord3 > 9 || coord4 < 0 || coord4 > 9 || coord3 + 1 > 8 || coord3 + 2 > 8 || coord3 + 3 > 8)
+                                if (coord3 + 1 > 9)
                                 {
-                                    i--;
+                                    canPlace = false;
+                                    break;
                                 }
-                                else
+                                for (int k = coord3; k <= coord3 + 1; k++)
                                 {
-                                    if (enemyMap[coord3, coord4] == "O" || enemyMap[coord3 + 1, coord4] == "O" || enemyMap[coord3 + 2, coord4] == "O" || enemyMap[coord3 + 3, coord4] == "O" ||
-                                        (enemyMap[coord3 - 1, coord4 - 1] == "O" && enemyMap[coord3 + 1, coord4 - 1] == "O" && enemyMap[coord3 - 1, coord4 + 1] == "O" && enemyMap[coord3 + 1, coord4 + 1] == "O"))
+                                    if (PositionCheck(k, coord4, enemyMap) || enemyMap[k, coord4] == "O")
                                     {
-                                        i--;
-                                    }
-                                    else
-                                    {
-                                        enemyMap[coord3, coord4] = "O";
-                                        enemyMap[coord3 + 1, coord4] = "O";
-                                        enemyMap[coord3 + 2, coord4] = "O";
-                                        enemyMap[coord3 + 3, coord4] = "O";
-                                        four_deck++;
+                                        canPlace = false;
+                                        break;
                                     }
                                 }
                                 break;
+                            default:
+                                Console.WriteLine("Такого направления нет");
+                                i--;
+                                break;
+                        }
+                        if (canPlace)
+                        {
+                            switch (choosen_Direct)
+                            {
+                                case "влево":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 - 1] = "O";
+                                    enemyMap[coord3, coord4 - 2] = "O";
+                                    enemyMap[coord3, coord4 - 3] = "O";
+                                    break;
+                                case "вправо":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3, coord4 + 1] = "O";
+                                    enemyMap[coord3, coord4 + 2] = "O";
+                                    enemyMap[coord3, coord4 + 3] = "O";
+                                    //
+                                    break;
+                                case "вверх":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 - 1, coord4] = "O";
+                                    enemyMap[coord3 - 2, coord4] = "O";
+                                    enemyMap[coord3 - 3, coord4] = "O";
+                                    break;
+                                case "вниз":
+                                    enemyMap[coord3, coord4] = "O";
+                                    enemyMap[coord3 + 1, coord4] = "O";
+                                    enemyMap[coord3 + 2, coord4] = "O";
+                                    enemyMap[coord3 + 3, coord4] = "O";
+                                    break;
+                            }
+                            four_deck++;
+                        }
+                        else i--;
+                    }
+                }
+            }
+        }
+        public static bool PositionCheck(int x, int y, string[,] map)
+        {
+            for (int i = x - 1; i <= x + 1; i++)
+            {
+                for (int j = y - 1; j <= y + 1; j++)
+                {
+                    if (i >= 0 && i < map.GetLength(0) && j >= 0 && j < map.GetLength(1))
+                    {
+                        if (map[i, j] == "O")
+                        {
+                            return true;
                         }
                     }
                 }
             }
+            return false;
         }
         public static void FightProcess()
         {

@@ -19,7 +19,6 @@ namespace Practice_9_SeaFight
         {
             Console.WriteLine("Press Enter");
             EnemySheep();
-            DrawEnemyMap();
             string direction;
             int single_deck = 0;
             int double_deck = 0;
@@ -57,8 +56,7 @@ namespace Practice_9_SeaFight
                         }
                         else
                         {
-                            if (map[coord1, coord2] == "O" || map[coord1, coord2 - 1] == "O" || map[coord1, coord2 + 1] == "O" || map[coord1 - 1, coord2] == "O" || map[coord1 + 1, coord2] == "O"
-                                || map[coord1 - 1, coord2 - 1] == "O" || map[coord1 + 1, coord2 - 1] == "O" || map[coord1 - 1, coord2 + 1] == "O" || map[coord1 + 1, coord2 + 1] == "O")
+                            if (map[coord1, coord2] == "O")
                             {
                                 Console.WriteLine("Эта ячейка уже занята");
                                 i--;
@@ -833,7 +831,6 @@ namespace Practice_9_SeaFight
                                     enemyMap[coord3, coord4 + 1] = "O";
                                     enemyMap[coord3, coord4 + 2] = "O";
                                     enemyMap[coord3, coord4 + 3] = "O";
-                                    //
                                     break;
                                 case "вверх":
                                     enemyMap[coord3, coord4] = "O";
